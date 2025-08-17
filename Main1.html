@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangla Library</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .hero {
+            background: url('https://wallpaperaccess.com/full/5487854.jpg') center/cover no-repeat;
+            height: 500px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align:center;
+        }
+        .hero h1 {
+            font-size: 2em;
+        }
+        .hero button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: large;
+            background-color: rgb(86, 86, 250);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            text-align: left;
+            font-size: large;
+            margin: auto;
+        }
+        .about-us {
+            display: flex;
+            font-size: large;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .about-us-content {
+            width: 60%;
+        }
+
+        .about-us-image {
+            width: 30%;
+        }
+
+        .about-us-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+
+        .products, .category {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .product {
+            flex: 1 1 200px;
+            text-align: center;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Library</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Book</a>
+            <a href="#">Category</a>
+            <a href="#">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        
+        <h1>WELCOME TO<br>LIBRARY</h1>
+        <p>"Read,dream,explore:the Library is your key."</p>
+        <form action="login.html">
+            <button type="submit">Get started</button>
+        </form>
+    </div>
+<br><br>
+
+    <section class="about-us">
+        <div class="about-us-content">
+          <h2>About Us</h2>      
+        <p>
+            Empowering minds, enriching lives: Our library is dedicated to providing access to knowledge, fostering a love of reading, and building a stronger community.
+            Welcome to [Library Name], where we strive to inspire curiosity, spark imagination, and connect people through the power of information.
+            At [Library Name], we believe that everyone deserves access to the resources and opportunities they need to succeed. We're here to support our community, one book at a time.
+            Our library is a vibrant hub of activity, where people of all ages and backgrounds come together to learn, grow, and connect.<br>
+            Our library is home to a vast and diverse collection of books, media, and resources, carefully curated to meet the needs of our community.
+            From classic literature to cutting-edge technology, our library's collection is designed to inspire, educate, and entertain.
+            <br>
+            At [Library Name], we value intellectual freedom, inclusivity, and lifelong learning. We're committed to providing a welcoming and supportive environment for all.
+            Our library is built on a foundation of respect, empathy, and a passion for knowledge. We're dedicated to serving our community with integrity and excellence.
+            
+            </p>
+        </div>
+        <div class="about-us-image">
+          <img src="image.png" alt="Library Image">
+        </div>
+      </section>
+      
+
+    <section class="section">
+        <h2>Products</h2>
+        <div class="products">
+            <div class="product"><img src="https://covers.openlibrary.org/b/id/11106347-L.jpg"><p>Psychology of Money</p></div>
+            <div class="product"><img src="https://covers.openlibrary.org/b/id/10407042-L.jpg"><p>How Innovation Works</p></div>
+            <div class="product"><img src="https://covers.openlibrary.org/b/id/10921262-L.jpg"><p>Company of One</p></div>
+            <div class="product"><img src="https://covers.openlibrary.org/b/id/11143988-L.jpg"><p>The Two Towers</p></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>Category</h2>
+        <div class="category">
+            <div class="product"><img src="image copy.png"><p>Finance</p></div>
+            <div class="product"><img src="image copy 2.png"><p>Innovation</p></div>
+            <div class="product"><img src="image copy 3.png"><p>Storytelling</p></div>
+            <div class="product"><img src="image copy 4.png"><p>Fantasy</p></div>
+        </div>
+    </section>
+
+   
+
+    <footer>
+        <div>Library</div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+        <div class="socials">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Book</a>
+            <a href="#">Category</a>
+            <a href="#">Contact Us</a>
+        </nav>
+        <p>Copyright © All Right Reserved.</p>
+    </footer>
+</body>
+</html>

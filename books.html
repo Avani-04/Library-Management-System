@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f6f6f6;
+    }
+    header {
+      background: #e5e2cc;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 40px;
+    }
+    .carousel {
+      background: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .carousel div {
+      margin: 10px 0;
+      padding: 10px;
+      background: #ddd;
+      display: inline-block;
+      border-radius: 10px;
+    }
+    .section {
+      margin: 20px;
+    }
+    .section h2 {
+      border-bottom: 2px solid #0077cc;
+      padding-bottom: 5px;
+    }
+    .books {
+      display: flex;
+      gap: 30px;
+      overflow-x: auto; /* Add horizontal scroll */
+      padding: 10px 0;
+      scrollbar-width: thin; /* Firefox */
+      scrollbar-color: #0077cc #f6f6f6;
+    }
+    .books::-webkit-scrollbar {
+      height: 8px;
+    }
+    .books::-webkit-scrollbar-thumb {
+      background-color: #0077cc;
+      border-radius: 10px;
+    }
+    .books::-webkit-scrollbar-track {
+      background: #f6f6f6;
+    }
+    .book {
+      
+      padding: 30px;
+      border-radius: 10px;
+      width: 120px;
+      text-align: center;
+      flex: 0 0 auto; /* Prevent shrinking */
+    }
+    .book img {
+      width:180px;
+      height: 250px;
+      
+      border-radius: 5px;
+    }
+    .book button {
+      margin-top: 5px;
+      padding: 5px 8px;
+      background: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://openlibrary.org/static/images/openlibrary-logo-tighter.svg" alt="Library Logo">
+  <a href="display.html">
+    <img src="img6.png" class="logo" alt="User Profile">
+  </a>
+</header>
+
+<div class="carousel">
+  <div>Read Library Books</div>
+  <div>Set a Yearly Reading Goal</div>
+</div>
+
+<div class="section">
+  <h2>Trending Books</h2>
+  <div class="books">
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8165046-L.jpg" alt="Book">
+      <button>Available</button>
+    </div>
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/6979861-L.jpg" alt="Book">
+      <button>Not in Library</button>
+    </div>
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8228691-L.jpg" alt="Book">
+      <button>Available</button>
+    </div>
+    <div class="book">
+        <img src="https://i.pinimg.com/originals/57/9b/20/579b20f3fa554d5c74708684ba7a870f.jpg" alt="Book">
+        <form action="harray.html">
+            <button type="submit">Available</button>
+        </form>
+      </div>
+      <div class="book">
+        <img src="https://m.media-amazon.com/images/I/71pMcaupWeL._SL1500_.jpg" alt="Book">
+        <button>Not in Library</button>
+      </div>
+      <div class="book">
+        <img src="https://m.media-amazon.com/images/I/81TwewImvVL.jpg" alt="Book">
+        <button>Available</button>
+      </div>
+      <div class="book">
+        <img src="https://covers.openlibrary.org/b/id/8165046-L.jpg" alt="Book">
+        <button>Available</button>
+      </div>
+      <div class="book">
+        <img src="https://covers.openlibrary.org/b/id/6979861-L.jpg" alt="Book">
+        <button>Not in Library</button>
+      </div>
+      
+  </div>
+</div>
+
+<div class="section">
+  <h2>Classic Books</h2>
+  <div class="books">
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8221671-L.jpg" alt="Book">
+      <button>Available</button>
+    </div>
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8231990-L.jpg" alt="Book">
+      <button>Available</button>
+    </div>
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8222588-L.jpg" alt="Book">
+      <button>Available</button>
+    </div>
+    <div class="book">
+        <img src="https://s-i.huffpost.com/gen/1148926/images/o-CLASSIC-BOOKS-ORIGINAL-COVERS-facebook.jpg" alt="Book">
+        <form action="kill.html">
+            <button type="submit">Available</button>
+        </form>
+      </div>
+      <div class="book">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.gY_nKglLavhGgKmZu0U2OgHaK2?w=1015&h=1488&rs=1&pid=ImgDetMain" alt="Book">
+        <button>Available</button>
+      </div>
+      <div class="book">
+        <img src="https://pulpcovers.com/wp-content/uploads/2011/05/568.jpg" alt="Book">
+        <button>Available</button>
+      </div>
+      <div class="book">
+        <img src="https://i1.wp.com/pulpcovers.com/wp-content/uploads/2015/10/019.jpg?fit=1766%2C2668&ssl=1" alt="Book">
+        <button>Not in Library</button>
+      </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Books We Love</h2>
+  <div class="books">
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8136930-L.jpg" alt="Book">
+      <button>Not in Library</button>
+    </div>
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8183075-L.jpg" alt="Book">
+      <button>Available</button>
+    </div>
+    <div class="book">
+      <img src="https://covers.openlibrary.org/b/id/8231232-L.jpg" alt="Book">
+      <button>Available</button>
+    </div>
+        <div class="book">
+          <img src="https://covers.openlibrary.org/b/id/8222580-L.jpg" alt="Book">
+          <button>Available</button>
+        </div>
+        <div class="book">
+          <img src="https://covers.openlibrary.org/b/id/8231071-L.jpg" alt="Book">
+          <button>Not in Library</button>
+        </div>
+        <div class="book">
+          <img src="https://covers.openlibrary.org/b/id/8231579-L.jpg" alt="Book">
+          <button>Available</button>
+        </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

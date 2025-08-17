@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+    tr:hover {
+      background-color: #f8f9fa;
+    }
+    .checkout-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    .checkout-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Checkout</h1>
+    <h2>Books in Your Cart</h2>
+
+    <table id="checkoutTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Copies</th>
+          <th>Genre</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <button class="checkout-button" onclick="processCheckout()">Proceed to Checkout</button>
+  </div>
+
+  <script>
+    // Function to get URL parameters
+    function getURLParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Function to process and display books from URL
+    function displayBooks() {
+      const booksData = getURLParameter('books');
+      
+      if (booksData) {
+        // Decode and parse the books data
+        const books = JSON.parse(decodeURIComponent(booksData));
+
+        const tbody = document.querySelector('#checkoutTable tbody');
+        tbody.innerHTML = ''; // Clear any existing rows
+
+        // Display each book in the table
+        books.forEach((book) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${book.title}</td>
+            <td>${book.author}</td>
+            <td>${book.isbn}</td>
+            <td>${book.copies}</td>
+            <td>${book.genre}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      } else {
+        alert('No books found!');
+      }
+    }
+
+    // Function to simulate proceeding with the checkout
+    function processCheckout() {
+      const booksData = getURLParameter('books');
+      if (booksData) {
+        // Here you can add logic for processing the checkout (like sending data to the server)
+        alert('Proceeding to checkout with ' + JSON.parse(decodeURIComponent(booksData)).length + ' books!');
+        // For example, redirect to a payment page or confirmation page
+        window.location.href = "confirmation.html";  // Redirect to a confirmation page (you can create this page)
+      } else {
+        alert('No books in the cart to checkout!');
+      }
+    }
+
+    // Call the displayBooks function when the page loads
+    window.onload = displayBooks;
+  </script>
+</body>
+</html>

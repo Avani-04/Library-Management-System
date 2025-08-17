@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Information - To Kill a Mockingbird</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f6f6;
+      margin: 0;
+      padding: 20px;
+    }
+    .book-info {
+      display: flex;
+      max-width: 1000px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .book-info img {
+      width: 300px;
+      height: auto;
+      object-fit: cover;
+    }
+    .book-details {
+      padding: 20px;
+      flex: 1;
+    }
+    .book-details h1 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #333;
+    }
+    .book-details p {
+      margin: 10px 0;
+      line-height: 1.6;
+      color: #555;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #000;
+    }
+    .notable-elements {
+      margin-top: 20px;
+    }
+    .notable-elements h2 {
+      font-size: 22px;
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+    .notable-elements ul {
+      padding-left: 20px;
+    }
+    .notable-elements li {
+      margin-bottom: 8px;
+      color: #444;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #6e8efb;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<div class="book-info">
+  <img src="https://covers.openlibrary.org/b/id/8229785-L.jpg" alt="To Kill a Mockingbird Cover">
+  <div class="book-details">
+    <h1>To Kill a Mockingbird</h1>
+    <p><span class="highlight">Author:</span> Harper Lee</p>
+    <p><span class="highlight">Published:</span> 1960</p>
+    <p><span class="highlight">Genre:</span> Fiction, Drama</p>
+    <p><span class="highlight">Summary:</span> "To Kill a Mockingbird" tells the story of Scout Finch, a young girl growing up in the racially segregated American South during the 1930s. Her father, lawyer Atticus Finch, is tasked with defending Tom Robinson, a black man falsely accused of raping a white woman. The novel explores themes of racial injustice, moral growth, and the complexities of human nature.</p>
+
+    <div class="notable-elements">
+      <h2>🌟 Notable Elements:</h2>
+      <ul>
+        <li>Deals with serious themes of racial prejudice and justice.</li>
+        <li>Features a memorable narrator in the form of Scout Finch, a child who grows through the events.</li>
+        <li>Atticus Finch is an iconic figure, representing justice, integrity, and moral courage.</li>
+        <li>Portrays the divide between social classes and racial tensions in the Deep South.</li>
+        <li>Has had a significant impact on discussions surrounding civil rights in America.</li>
+      </ul>
+    </div>
+
+    <!-- Form to send data -->
+    <form action="LMS.html" method="get">
+      <input type="hidden" name="title" value="To Kill a Mockingbird">
+      <input type="hidden" name="author" value="Harper Lee">
+      <input type="hidden" name="published" value="1960">
+      <input type="hidden" name="genre" value="Fiction, Drama">
+      <button type="submit">Borrow</button>
+    </form>
+
+  </div>
+</div>
+
+</body>
+</html>

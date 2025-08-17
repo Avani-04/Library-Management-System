@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Information - Chamber of Secrets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f6f6;
+      margin: 0;
+      padding: 20px;
+    }
+    .book-info {
+      display: flex;
+      max-width: 1000px;
+      margin: auto;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .book-info img {
+      width: 300px;
+      height: auto;
+      object-fit: cover;
+    }
+    .book-details {
+      padding: 20px;
+      flex: 1;
+    }
+    .book-details h1 {
+      margin-top: 0;
+      font-size: 28px;
+      color: #333;
+    }
+    .book-details p {
+      margin: 10px 0;
+      line-height: 1.6;
+      color: #555;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #000;
+    }
+    .notable-elements {
+      margin-top: 20px;
+    }
+    .notable-elements h2 {
+      font-size: 22px;
+      color: #0077cc;
+      margin-bottom: 10px;
+    }
+    .notable-elements ul {
+      padding-left: 20px;
+    }
+    .notable-elements li {
+      margin-bottom: 8px;
+      color: #444;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #6e8efb;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+<div class="book-info">
+  <img src="https://i.pinimg.com/originals/57/9b/20/579b20f3fa554d5c74708684ba7a870f.jpg" alt="Chamber of Secrets Cover">
+  <div class="book-details">
+    <h1>Harry Potter and the Chamber of Secrets</h1>
+    <p><span class="highlight">Author:</span> J.K. Rowling</p>
+    <p><span class="highlight">Published:</span> 1998</p>
+    <p><span class="highlight">Genre:</span> Fantasy, Adventure</p>
+    <p><span class="highlight">Summary:</span> The second installment in the Harry Potter series, where Harry returns to Hogwarts School of Witchcraft and Wizardry. Strange things are happening — students are being mysteriously petrified and a dark secret hidden within the castle is about to be uncovered. Harry, along with his friends Ron and Hermione, must solve the mystery of the Chamber of Secrets to save the school.</p>
+
+    <div class="notable-elements">
+      <h2>🌟 Notable Elements:</h2>
+      <ul>
+        <li>Introduction of Dobby the house-elf</li>
+        <li>First mention of Parseltongue (snake language)</li>
+        <li>Reveals more about Voldemort's past</li>
+        <li>Deeper insights into Hogwarts’ founders</li>
+        <li>Gilderoy Lockhart's hilarious incompetence</li>
+      </ul>
+    </div>
+
+    <!-- Form to send data -->
+    <form action="LMS.html" method="get">
+      <input type="hidden" name="title" value="Harry Potter and the Chamber of Secrets">
+      <input type="hidden" name="author" value="J.K. Rowling">
+      <input type="hidden" name="published" value="1998">
+      <input type="hidden" name="genre" value="Fantasy, Adventure">
+      <button type="submit">Borrow</button>
+    </form>
+
+  </div>
+</div>
+
+</body>
+</html>

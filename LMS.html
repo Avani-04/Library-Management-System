@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book List</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+    }
+    tr:hover {
+      background-color: #f8f9fa;
+    }
+    .delete-button {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .delete-button:hover {
+      background-color: #c82333;
+    }
+    .submit-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    .submit-button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Book List</h1>
+
+    <h2>Books Added</h2>
+    <table id="bookTable">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Copies</th>
+          <th>Genre</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- Submit Button -->
+    <button class="submit-button" onclick="submitBooks()">Submit</button>
+  </div>
+
+  <script>
+    // Function to get books from localStorage or set an empty array if none exist
+    let books = JSON.parse(localStorage.getItem('books')) || [];
+
+    // Function to get URL parameters
+    function getURLParameter(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Function to check if there are any books passed via URL and add them
+    function checkAndAddBook() {
+      const borrowedTitle = getURLParameter('title');
+      const borrowedAuthor = getURLParameter('author');
+      const borrowedGenre = getURLParameter('genre');
+      const borrowedPublished = getURLParameter('published');
+
+      if (borrowedTitle && borrowedAuthor && borrowedGenre && borrowedPublished) {
+        const newBook = {
+          title: borrowedTitle,
+          author: borrowedAuthor,
+          isbn: borrowedPublished,
+          copies: 1,  // Assuming 1 copy per book for simplicity
+          genre: borrowedGenre
+        };
+        books.push(newBook);  // Add the new book to the array
+        localStorage.setItem('books', JSON.stringify(books)); // Save the updated books array to localStorage
+        updateBookTable();    // Update the table to display the new book
+      }
+    }
+
+    // Function to update the book table with the current books
+    function updateBookTable() {
+      const tbody = document.querySelector('#bookTable tbody');
+      tbody.innerHTML = '';  // Clear the existing rows
+
+      books.forEach((book, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${book.title}</td>
+          <td>${book.author}</td>
+          <td>${book.isbn}</td>
+          <td>${book.copies}</td>
+          <td>${book.genre}</td>
+          <td><button class="delete-button" onclick="deleteBook(${index})">Delete</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Function to delete a book from the list
+    function deleteBook(index) {
+      if (confirm('Are you sure you want to delete this book?')) {
+        books.splice(index, 1); // Remove the book from the array
+        localStorage.setItem('books', JSON.stringify(books)); // Save the updated list to localStorage
+        updateBookTable();      // Update the table
+      }
+    }
+
+    // Function to submit the book list to the next page
+    function submitBooks() {
+      if (books.length > 0) {
+        // Assuming you want to send the list of books to the next page (checkout.html)
+        // You can pass the books data via URL or in any other way, depending on your needs.
+        const booksData = encodeURIComponent(JSON.stringify(books));
+        window.location.href = `confirmation.html?books=${booksData}`; // Redirect to checkout page
+      } else {
+        alert('No books have been added to the list!');
+      }
+    }
+
+    // Call the checkAndAddBook function when the page loads
+    window.onload = checkAndAddBook;
+  </script>
+</body>
+</html>
